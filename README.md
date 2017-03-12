@@ -41,7 +41,7 @@ The calculated checksum changes, as there is now one extra library
 with its own data loaded. If we then change the library contents, the
 calculated checksum will change:
 
-    $ echo int fun() {return 1;}" > fun.c
+    $ echo "int fun() {return 1;}" > fun.c
     $ gcc -shared -fPIC fun.c -o fun.so
     $ LD_PRELOAD=$PWD/fun.so ./self-checksum
     3234bd960dac2633
